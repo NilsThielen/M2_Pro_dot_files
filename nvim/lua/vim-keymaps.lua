@@ -30,3 +30,6 @@ vim.keymap.set({'n', 'v', 'x'}, "<leader>rf", ":Refactor extract_to_file ")
 
 -- CsvView keybinds
 vim.keymap.set({'n', 'v', 'x'}, "<leader>c", ":CsvViewToggle<CR>")
+
+-- None-ls keybinds
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {})

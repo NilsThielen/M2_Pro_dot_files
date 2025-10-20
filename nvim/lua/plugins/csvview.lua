@@ -5,7 +5,6 @@ return {
             view = {
                 display_mode = 'border'
             }
-
         })
 	end,
 }
