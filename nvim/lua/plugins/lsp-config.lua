@@ -18,20 +18,16 @@ return {
         lazy = false,
 		config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
+            vim.lsp.config('lua_ls', {
                 capabilities = capabilities
             })
-            lspconfig.gdscript.setup({
+            vim.lsp.config('gdscript', {
                 capabilities = capabilities
             })
-            lspconfig.texlab.setup({
+            vim.lsp.config('texlab', {
                 capabilities = capabilities
             })
-            lspconfig.latex.setup({
-                capabilities = capabilities
-            })
-			lspconfig.pylsp.setup({
+            vim.lsp.config('pylsp', {
                 capabilities = capabilities,
                 settings = {
                     pylsp = {
@@ -49,7 +45,6 @@ return {
                     }
                 }
             })
-
             vim.diagnostic.config({
                 signs = false,
             })
