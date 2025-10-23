@@ -16,19 +16,26 @@ return {
 	{
 		"neovim/nvim-lspconfig",
         lazy = false,
+        opts = {
+            inlay_hints = { enabled = true }
+        },
 		config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             vim.lsp.config('lua_ls', {
-                capabilities = capabilities
+                capabilities = capabilities,
+                diagnostics = {enable = true}
             })
             vim.lsp.config('gdscript', {
-                capabilities = capabilities
+                capabilities = capabilities,
+                diagnostics = {enable = true}
             })
             vim.lsp.config('texlab', {
-                capabilities = capabilities
+                capabilities = capabilities,
+                diagnostics = {enable = true}
             })
             vim.lsp.config('pylsp', {
                 capabilities = capabilities,
+                diagnostics = {enable = true},
                 settings = {
                     pylsp = {
                         plugins = {
@@ -45,9 +52,9 @@ return {
                     }
                 }
             })
-            vim.diagnostic.config({
-                signs = false,
-            })
+            -- vim.diagnostic.config({
+            --     signs = false,
+            -- })
 		end,
 	},
 }
